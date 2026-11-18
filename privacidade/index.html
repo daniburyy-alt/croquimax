@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CroquiMax · Política de privacidade</title>
+<meta name="description" content="Política de privacidade da aplicação CroquiMax (Android e Windows).">
+<style>
+  :root { --fundo:#f6f4ee; --cartao:#fffdf8; --tinta:#1d2a22; --suave:#4f5a53; --linha:#ded9cc; --verde:#2f5d46; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --fundo:#121417; --cartao:#1a1d21; --tinta:#ecebe7; --suave:#a9aea9; --linha:#2c3036; --verde:#8fc4a6; }
+  }
+  :root[data-theme="dark"] { --fundo:#121417; --cartao:#1a1d21; --tinta:#ecebe7; --suave:#a9aea9; --linha:#2c3036; --verde:#8fc4a6; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fundo); color:var(--tinta);
+    font:17px/1.65 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  main { max-width:46rem; margin:0 auto; padding:56px 16px 80px; }
+  .rotulo { font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--suave); }
+  h1 { font:400 clamp(36px, 6vw, 54px)/1.05 Georgia, "Times New Roman", serif; margin:.35em 0 .25em; }
+  h1 em { color:var(--verde); }
+  h2 { font:600 23px/1.25 inherit; margin:2.2em 0 .5em; padding-top:1em; border-top:1px solid var(--linha); }
+  h3 { font-size:19px; margin:1.4em 0 .3em; }
+  p, li { color:var(--tinta); }
+  .nota { color:var(--suave); font-size:15px; }
+  table { width:100%; border-collapse:collapse; font-size:15px; margin:.6em 0 1em; display:block; overflow-x:auto; }
+  th, td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--linha); }
+  th { font-weight:600; color:var(--suave); font-size:13px; letter-spacing:.04em; }
+  .caixa { background:var(--cartao); border:1px solid var(--linha); border-radius:16px; padding:16px 20px; margin:1.2em 0; }
+  a { color:var(--verde); }
+  .preencher { background:#ffe7a8; color:#3b2c00; padding:0 .3em; border-radius:4px; }
+  nav a { display:inline-block; margin-right:14px; }
+  /* Telemóvel: cada serviço num bloco, sem deslocamento para o lado. */
+  @media (max-width: 640px) {
+    table, tbody, tr, td { display:block; width:auto; }
+    thead { display:none; }
+    tr { padding:12px 0; border-bottom:1px solid var(--linha); }
+    td { border:0; padding:2px 0; }
+    td:first-child { font-weight:600; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Política de <em>privacidade</em></h1>
+  <p class="nota">CroquiMax para Android e Windows · versão 1.0 · em vigor desde 18/11/2026 · <a href="#en">English version</a></p>
+
+  <div class="caixa">
+    <strong>Em resumo.</strong> O CroquiMax não tem contas, publicidade, estatísticas de utilização nem
+    inteligência artificial. Os croquis, as notas, as matrículas e as medições ficam no seu aparelho e não são
+    enviados ao responsável pela aplicação nem a terceiros. Só quando usa o mapa é que o aparelho pede imagens
+    e dados cartográficos a serviços públicos, que recebem o endereço IP e a zona do mapa pedida (ou o texto
+    da pesquisa).
+  </div>
+
+  <h2>1. Quem é o responsável</h2>
+  <p>A aplicação CroquiMax é disponibilizada por Daniel Buryy (pessoa singular),
+    Vila Real de Santo António, Portugal. Contacto para questões de privacidade:
+    <a href="mailto:croquimax@gmail.com">croquimax@gmail.com</a>.</p>
+
+  <h2>2. O que fica no seu aparelho</h2>
+  <ul>
+    <li><strong>Projetos e exportações</strong> (.croqui, PDF, PNG, JPG, SVG, Word): ficam onde os guardar ou
+      são entregues à aplicação que escolher na partilha do sistema. Podem conter dados pessoais de terceiros
+      (por exemplo, matrículas). Quem cria o croqui decide o que neles escreve e a quem os entrega.</li>
+    <li><strong>Rascunho de recuperação</strong>: uma cópia do croqui em curso, na pasta privada da aplicação,
+      para não perder trabalho se a aplicação fechar. É apagado ao desinstalar a aplicação.</li>
+    <li><strong>Preferências</strong> (tema, símbolos favoritos e recentes da biblioteca, grelha) e <strong>cache do mapa</strong>
+      (imagens já descarregadas, para o mapa abrir mais depressa).</li>
+  </ul>
+  <p>No Android, a aplicação desliga a cópia de segurança automática para a nuvem e a transferência para
+    outro aparelho, para que o rascunho não saia do telemóvel.</p>
+  <p>O responsável pela aplicação <strong>não recebe nem tem acesso</strong> a nenhum destes dados.</p>
+
+  <h2>3. Localização («Onde estou»)</h2>
+  <p>No Android, a aplicação pede autorização para saber a localização <strong>só quando carrega em «Onde estou»</strong>.
+    A posição é lida uma vez para centrar o mapa e não é guardada nem enviada. Pode recusar ou retirar a
+    autorização nas definições do sistema; o resto da aplicação continua a funcionar. A versão Windows não usa
+    a localização.</p>
+
+  <h2>4. Serviços de mapas (só quando usa o mapa)</h2>
+  <p>Para mostrar o mapa, pesquisar um lugar ou gerar o esboço das ruas, o seu aparelho comunica diretamente
+    com os serviços abaixo. Como em qualquer ligação à Internet, cada serviço recebe o <strong>endereço IP</strong>,
+    a <strong>identificação da aplicação</strong> (CroquiMax/1.0) e o pedido. <strong>Nunca</strong> são enviados
+    matrículas, notas, medições, nomes ou ficheiros do croqui.</p>
+  <table>
+    <thead><tr><th>Serviço</th><th>Para quê</th><th>O que recebe</th><th>Onde</th></tr></thead>
+    <tbody>
+      <tr><td>OpenStreetMap Foundation<br><span class="nota">tile.openstreetmap.org, nominatim.openstreetmap.org</span></td>
+        <td>Imagens do mapa; pesquisa de reserva</td><td>Zona do mapa (mosaicos); texto da pesquisa</td>
+        <td>Reino Unido (decisão de adequação da UE)</td></tr>
+      <tr><td>komoot GmbH — Photon<br><span class="nota">photon.komoot.io</span></td>
+        <td>Pesquisa de lugares enquanto escreve</td><td>Texto da pesquisa</td><td>Alemanha (UE)</td></tr>
+      <tr><td>dresel.systems — servidor Overpass<br><span class="nota">ovp.dresel.systems</span></td>
+        <td>Ruas, edifícios e estabelecimentos para o esboço</td><td>Limites da zona escolhida</td>
+        <td>Alemanha (UE); guarda o IP e o pedido 14 dias</td></tr>
+      <tr><td>FOSSGIS e.V. — Overpass API<br><span class="nota">overpass-api.de</span></td>
+        <td>Reserva do serviço anterior</td><td>Limites da zona escolhida</td><td>Alemanha (UE)</td></tr>
+      <tr><td>Direção-Geral do Território<br><span class="nota">ogcapi.dgterritorio.gov.pt</span></td>
+        <td>Foto aérea (Portugal Continental), se a escolher</td><td>Zona do mapa (mosaicos)</td><td>Portugal (UE)</td></tr>
+    </tbody>
+  </table>
+  <p>Estes serviços tratam os dados como responsáveis próprios, segundo as suas políticas de privacidade.
+    Se não usar o mapa (por exemplo, numa planta desenhada à mão), a aplicação não faz pedidos à Internet.</p>
+
+  <h2>5. Compras</h2>
+  <p>A aplicação é paga uma vez na Google Play ou na Microsoft Store. O pagamento é tratado pela loja, segundo
+    a política de privacidade da Google ou da Microsoft. A loja pode dar ao responsável pela aplicação dados da
+    venda (número da encomenda, país, data, valor e, em alguns casos, nome ou email do comprador), usados só para
+    faturação, reembolsos, apoio e obrigações fiscais (RGPD, art. 6.º, n.º 1, alíneas b) e c)), e guardados
+    durante o prazo que a lei fiscal exige.</p>
+
+  <h2>6. Fundamentos e direitos (RGPD)</h2>
+  <ul>
+    <li>Os pedidos aos serviços de mapas são feitos a seu pedido, para executar a função que escolheu
+      (art. 6.º, n.º 1, alínea b)); a localização é usada com o seu consentimento, dado na autorização do sistema
+      (alínea a)), que pode retirar a qualquer momento.</li>
+    <li>Tem direito de acesso, retificação, apagamento, limitação, portabilidade e oposição. Como o responsável
+      pela aplicação não guarda dados de utilização, os pedidos dizem respeito, na prática, aos dados de compra
+      ou aos serviços indicados no ponto 4 (contacte-os diretamente).</li>
+    <li>Pode apresentar reclamação à Comissão Nacional de Proteção de Dados (CNPD, <a href="https://www.cnpd.pt">www.cnpd.pt</a>).</li>
+  </ul>
+
+  <h2>7. Crianças</h2>
+  <p>O CroquiMax é uma ferramenta profissional e não se destina a menores de 16 anos.</p>
+
+  <h2>8. Alterações</h2>
+  <p>Se o funcionamento da aplicação mudar (por exemplo, outro serviço de mapas), esta política é atualizada antes,
+    com nova data e versão no topo.</p>
+
+  <hr style="margin:4em 0 0; border:0; border-top:1px solid var(--linha)">
+
+  <section id="en" lang="en">
+    <h2 style="border-top:0; font:400 40px/1.1 Georgia, 'Times New Roman', serif">Privacy <em>policy</em> (English)</h2>
+    <p class="nota">Version 1.0 · effective 18/11/2026. The Portuguese text above prevails.</p>
+    <div class="caixa"><strong>In short.</strong> CroquiMax has no accounts, ads, analytics or AI. Sketches, notes,
+      licence plates and measurements stay on your device and are never sent to the developer or to third parties.
+      Only when you use the map does your device request map images and data from public services, which receive your
+      IP address and the requested map area (or search text).</div>
+    <h3>Controller</h3>
+    <p>Daniel Buryy (individual), Vila Real de Santo António, Portugal.
+      Contact: <a href="mailto:croquimax@gmail.com">croquimax@gmail.com</a>.</p>
+    <h3>On your device</h3>
+    <p>Projects and exports (stored where you choose or handed to the app you pick in the system share sheet),
+      a recovery draft in the app's private folder, preferences and a map cache. Android cloud backup and
+      device-to-device transfer are disabled for the app. The developer has no access to any of this data.</p>
+    <h3>Location</h3>
+    <p>Android only, requested only when you tap "Onde estou" (Where am I); read once to centre the map,
+      never stored or sent. The Windows version does not use location.</p>
+    <h3>Map services</h3>
+    <p>When you use the map, your device contacts directly: OpenStreetMap Foundation (UK — map tiles, fallback
+      search), komoot GmbH Photon (Germany — place search), dresel.systems Overpass (Germany — streets and buildings;
+      keeps IP and query for 14 days), FOSSGIS e.V. Overpass API (Germany — fallback) and Direção-Geral do Território
+      (Portugal — aerial photo). Each receives your IP address, the app identifier and the request (map area or
+      search text) and acts as an independent controller. No sketch content is ever sent.</p>
+    <h3>Purchases</h3>
+    <p>Payment is handled by Google Play or Microsoft Store under their privacy policies. The store may share sale
+      details (order number, country, date, amount and sometimes buyer name or email), used only for invoicing,
+      refunds, support and tax obligations.</p>
+    <h3>Your rights</h3>
+    <p>Access, rectification, erasure, restriction, portability and objection under the GDPR; complaints to the
+      Portuguese data protection authority (CNPD, <a href="https://www.cnpd.pt">www.cnpd.pt</a>). The app is not
+      intended for children under 16.</p>
+  </section>
+</main>
+</body>
+</html>
