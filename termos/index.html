@@ -5,35 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CroquiMax · Termos de utilização</title>
 <meta name="description" content="Termos de utilização da aplicação CroquiMax: licença, subscrição, renovação, cancelamento, garantia e responsabilidade.">
+<link rel="icon" href="../icone.png">
 <style>
-  :root { --fundo:#f6f4ee; --cartao:#fffdf8; --tinta:#1d2a22; --suave:#4f5a53; --linha:#ded9cc; --verde:#2f5d46; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --fundo:#121417; --cartao:#1a1d21; --tinta:#ecebe7; --suave:#a9aea9; --linha:#2c3036; --verde:#8fc4a6; }
-  }
-  :root[data-theme="dark"] { --fundo:#121417; --cartao:#1a1d21; --tinta:#ecebe7; --suave:#a9aea9; --linha:#2c3036; --verde:#8fc4a6; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--fundo); color:var(--tinta);
-    font:17px/1.65 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
-  main { max-width:46rem; margin:0 auto; padding:56px 16px 80px; }
-  h1 { font:400 clamp(36px, 6vw, 54px)/1.05 Georgia, "Times New Roman", serif; margin:.35em 0 .25em; }
-  h1 em { color:var(--verde); }
-  h2 { font-weight:600; font-size:23px; line-height:1.25; margin:2.2em 0 .5em; padding-top:1em; border-top:1px solid var(--linha); }
-  .nota { color:var(--suave); font-size:15px; }
-  .caixa { background:var(--cartao); border:1px solid var(--linha); border-radius:16px; padding:16px 20px; margin:1.2em 0; }
-  table { width:100%; border-collapse:collapse; font-size:15px; margin:.6em 0 1em; }
-  th, td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--linha); }
-  th { font-weight:600; color:var(--suave); font-size:13px; }
-  a { color:var(--verde); }
+@font-face { font-family: Geist; src: url(../fontes/Geist-Variavel.ttf) format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url(../fontes/GeistMono-Variavel.ttf) format("truetype"); font-weight: 100 900; font-display: swap; }
+:root { color-scheme: dark; --janela:#0B0C0E; --cartao:#17191D; --texto:#F2F1ED; --suave:#A2A5AB; --tenue:#7A7D84; --destaque:#FF6B1F; --linha:#2A2C30; --pontos:#1F2023; }
+@media (prefers-color-scheme: light) { :root:not([data-tema="escuro"]) { color-scheme: light; --janela:#E8E7E3; --cartao:#F6F5F2; --texto:#111317; --suave:#555961; --tenue:#7A7E85; --destaque:#C24A08; --linha:#D5D4D0; --pontos:#CFCECA; } }
+:root[data-tema="claro"] { color-scheme: light; --janela:#E8E7E3; --cartao:#F6F5F2; --texto:#111317; --suave:#555961; --tenue:#7A7E85; --destaque:#C24A08; --linha:#D5D4D0; --pontos:#CFCECA; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; background: var(--janela); color: var(--texto); font: 400 17px/1.7 Geist, system-ui, sans-serif;
+  background-image: radial-gradient(circle at 1px 1px, var(--pontos) 1px, transparent 1.4px); background-size: 22px 22px; background-attachment: fixed; }
+a { color: inherit; text-decoration-color: color-mix(in srgb, var(--destaque) 70%, transparent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--destaque); }
+:focus-visible { outline: 2px solid var(--destaque); outline-offset: 3px; border-radius: 6px; }
+.saltar { position: absolute; left: 12px; top: -60px; padding: 8px 14px; border-radius: 999px; background: var(--texto); color: var(--janela); z-index: 40; }
+.saltar:focus { top: 12px; }
+.progresso { position: fixed; top: 0; left: 0; height: 2px; width: 100%; background: var(--destaque); transform-origin: 0 50%; transform: scaleX(0); z-index: 30; }
+.nav { position: sticky; top: 14px; z-index: 20; margin: 14px auto 0; width: max-content; max-width: calc(100% - 24px);
+  display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 999px; border: 1px solid var(--linha);
+  background: color-mix(in srgb, var(--cartao) 94%, transparent); backdrop-filter: blur(16px); box-shadow: 0 10px 30px -12px rgba(0,0,0,.35); }
+.nav .marca { display: flex; align-items: center; gap: 8px; padding: 0 10px 0 4px; font-weight: 600; text-decoration: none; }
+.nav .marca img { width: 28px; height: 28px; border-radius: 50%; }
+.nav .abas { display: flex; gap: 2px; padding-left: 8px; border-left: 1px solid var(--linha); }
+.nav .abas a { padding: 7px 12px; border-radius: 999px; text-decoration: none; color: var(--suave); font-size: 14.5px; font-weight: 500; white-space: nowrap; }
+.nav .abas a:hover { color: var(--texto); }
+.nav .abas a[aria-current] { color: var(--texto); background: color-mix(in srgb, var(--texto) 8%, transparent); }
+.nav .abas a[aria-current]::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--destaque); margin-right: 7px; vertical-align: 2px; }
+.nav button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--linha); background: none; color: var(--texto); display: grid; place-items: center; cursor: pointer; }
+.nav button:hover { border-color: var(--destaque); color: var(--destaque); }
+header.topo { max-width: 1180px; margin: 0 auto; padding: 88px 24px 40px; }
+h1 { margin: 0; font-weight: 200; font-size: clamp(48px, 9.5vw, 132px); line-height: .95; letter-spacing: -.055em; }
+h1 .fim { background: linear-gradient(90deg, var(--texto), var(--suave) 55%, var(--destaque)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.meta { margin: 26px 0 0; font: 400 13.5px/1.6 "Geist Mono", monospace; color: var(--suave); max-width: 70ch; }
+.corpo { max-width: 1180px; margin: 0 auto; padding: 0 24px 96px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 64px; align-items: start; }
+.indice { position: sticky; top: 92px; font-size: 14px; }
+.indice p { margin: 0 0 10px; color: var(--tenue); font: 400 12.5px "Geist Mono", monospace; }
+.indice ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--linha); }
+.indice a { display: flex; gap: 10px; padding: 6px 0 6px 14px; margin-left: -1px; border-left: 1px solid transparent; text-decoration: none; color: var(--suave); line-height: 1.35; transition: color .2s, border-color .2s; }
+.indice a span { font: 400 12px/1.6 "Geist Mono", monospace; color: var(--tenue); }
+.indice a.ativo { color: var(--texto); border-left-color: var(--destaque); }
+.indice a.ativo span { color: var(--destaque); }
+.doc { max-width: 68ch; }
+.doc p, .doc li { color: color-mix(in srgb, var(--texto) 86%, var(--suave)); }
+.doc h2 { margin: 64px 0 14px; font-weight: 500; font-size: 26px; line-height: 1.2; letter-spacing: -.015em; }
+.doc h2.numerado { display: grid; grid-template-columns: 52px 1fr; align-items: baseline; }
+.doc h2 .n { font: 400 14px "Geist Mono", monospace; color: var(--destaque); }
+.doc > h2:first-of-type { margin-top: 40px; }
+.doc h3 { font-weight: 500; font-size: 19px; margin: 32px 0 8px; }
+.doc ul { padding-left: 1.1em; }
+.doc li { margin: .35em 0; }
+.doc li::marker { color: var(--destaque); }
+.doc .nota { color: var(--suave); font-size: 15px; }
+.caixa { background: var(--cartao); border: 1px solid var(--linha); border-radius: 22px; padding: 22px 26px; margin: 22px 0; }
+.caixa > strong:first-child { display: block; margin-bottom: 4px; font-weight: 600; }
+.doc > .caixa:first-child { font-size: 18px; line-height: 1.65; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 18px 0 24px; }
+th { text-align: left; font: 400 12.5px "Geist Mono", monospace; color: var(--tenue); padding: 0 12px 10px 0; border-bottom: 1px solid var(--linha); }
+td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--linha); vertical-align: top; }
+.formulario { background: #FFFFFF; color: #111317; border: 0; border-radius: 6px; padding: 30px 32px 26px; box-shadow: 0 24px 60px -28px rgba(0,0,0,.55); }
+.formulario .nota { color: #555961 !important; }
+.formulario li { color: #111317 !important; }
+.formulario li::marker { color: #F2600F; }
+.copiar { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 9px 16px; border-radius: 999px; border: 1px solid #D5D4D0; background: #F6F5F2; color: #111317; font: 500 14px Geist, sans-serif; cursor: pointer; }
+.copiar:hover { border-color: #F2600F; }
+section[lang="en"] { margin-top: 96px; padding-top: 40px; border-top: 1px solid var(--linha); }
+section[lang="en"] > h2 { font-weight: 200; font-size: clamp(34px, 5vw, 56px); letter-spacing: -.04em; margin-top: 0; }
+footer { max-width: 1180px; margin: 0 auto; padding: 32px 24px 56px; border-top: 1px solid var(--linha); display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; color: var(--suave); font-size: 14.5px; }
+footer .reclama { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--linha); text-decoration: none; color: var(--texto); font-weight: 500; }
+footer .reclama:hover { border-color: var(--destaque); }
+@keyframes entra { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } }
+h1, .meta { animation: entra .9s cubic-bezier(.2,.7,.1,1) both; }
+.meta { animation-delay: .15s; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } h1, .meta { animation: none; } .indice a { transition: none; } }
+@media (max-width: 900px) {
+  .corpo { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .indice { position: static; min-width: 0; margin-bottom: 8px; }
+  .indice ol { display: flex; gap: 8px; overflow-x: auto; border: 0; padding-bottom: 6px; scrollbar-width: none; }
+  .indice li { flex: none; }
+  .indice a { border: 1px solid var(--linha); border-radius: 999px; padding: 6px 12px; margin: 0; white-space: nowrap; }
+  .indice a.ativo { border-color: var(--destaque); }
+  header.topo { padding-top: 56px; }
+  .doc h2 { font-size: 22px; }
+  .doc h2.numerado { grid-template-columns: 40px 1fr; }
+  .nav .marca span { display: none; }
+  .nav .abas a { padding: 7px 10px; }
+  footer .reclama { margin-left: 0; }
+}
+@media (max-width: 760px) {
+  .doc table { display: block; }
+  .doc tbody, .doc tr, .doc td { display: block; }
+  .doc tr:has(th) { display: none; }
+  .doc tr { border: 1px solid var(--linha); border-radius: 14px; padding: 10px 14px; margin: 10px 0; }
+  .doc td { border: 0; padding: 3px 0; overflow-wrap: anywhere; }
+  .doc td::before { content: attr(data-rotulo); display: block; font: 400 11.5px "Geist Mono", monospace; color: var(--tenue); }
+}
+@media (max-width: 420px) {
+  .nav { gap: 4px; padding: 5px; }
+  .nav .marca { padding: 0 4px 0 2px; }
+  .nav .abas { padding-left: 4px; }
+  .nav .abas a { padding: 7px 8px; font-size: 13.5px; }
+  .nav .abas a[aria-current]::before { display: none; }
+  .nav button { width: 34px; height: 34px; }
+  .formulario { padding: 24px 20px; }
+}
+@media (max-width: 360px) { .nav .marca { display: none; } .nav .abas { border-left: 0; padding-left: 0; } }
+@media (max-width: 340px) { .nav .abas a { padding: 7px 6px; font-size: 13px; } }
+@media print {
+  body { background: #fff; color: #000; } .nav, .progresso, .indice, .copiar, .saltar { display: none; }
+  .corpo { display: block; } h1 .fim { color: #000; background: none; } h1, .meta { animation: none; }
+}
 </style>
 </head>
 <body>
-<main>
-  <h1>Termos de <em>utilização</em></h1>
-  <p class="nota">CroquiMax para Android e Windows · versão 1.0 · em vigor desde a publicação da versão com
-    subscrição · <a href="../privacidade/">Política de privacidade</a> ·
-    <a href="../consumidor/">Informação ao consumidor</a></p>
-
-  <div class="caixa">
+<a class="saltar" href="#texto">Saltar para o texto</a>
+<div class="progresso" aria-hidden="true"></div>
+<nav class="nav" aria-label="Documentos">
+  <a class="marca" href="../"><img src="../icone.png" alt=""><span>CroquiMax</span></a>
+  <div class="abas"><a href="../termos/" aria-current="page">Termos</a><a href="../privacidade/">Privacidade</a><a href="../consumidor/">Consumidor</a></div>
+  <button id="tema" type="button" aria-label="Mudar entre claro e escuro"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg></button>
+</nav>
+<header class="topo">
+  <h1>Termos de<br><span class="fim">utilização</span></h1>
+  <p class="meta">CroquiMax para Android e Windows · versão 1.0 · em vigor desde a publicação da versão com subscrição</p>
+</header>
+<div class="corpo">
+  <aside class="indice" aria-label="Índice"><p>Neste documento</p><ol id="lista"></ol></aside>
+  <main class="doc" id="texto">
+<div class="caixa">
     <strong>Em resumo.</strong> O CroquiMax ajuda a desenhar croquis de acidentes. Experimenta-o grátis,
     depois paga 7,99 € por ano ou 14,99 € uma vez («Para sempre»). A renovação é automática e cancela-se
     na loja quando quiser. Os seus croquis ficam no seu aparelho e continuam a abrir e a exportar mesmo sem
@@ -113,14 +212,8 @@
   </div>
 
   <h2>7. Garantia</h2>
-  <p>A aplicação deve funcionar como está descrito na ficha da loja, nos termos do Decreto-Lei n.º 84/2021
-    (artigo 32.º):</p>
-  <ul>
-    <li>Subscrição anual: o fornecedor responde por qualquer falta de conformidade durante todo o período em que a
-      subscrição está ativa.</li>
-    <li>Compra «Para sempre» (fornecimento único): o fornecedor responde por qualquer falta de conformidade que
-      exista no momento do fornecimento e se manifeste no prazo de dois anos a contar desse momento.</li>
-  </ul>
+  <p>A aplicação tem a garantia legal de conformidade dos conteúdos e serviços digitais (Decreto-Lei
+    n.º 84/2021): deve funcionar como está descrito na ficha da loja.</p>
   <p>Se encontrar um defeito, descreva-o para o email acima, com o aparelho e
     a versão da aplicação (está na ajuda, no botão «Licenças»).</p>
 
@@ -145,18 +238,72 @@
     prejudique não se aplica ao período de subscrição já pago.</p>
 
   <h2>12. Lei aplicável e litígios</h2>
-  <p>Aplica-se a lei portuguesa, sem prejuízo das normas imperativas do país onde o consumidor reside. Em caso
-    de litígio de consumo, pode recorrer a uma entidade de resolução alternativa de litígios (Lei n.º 144/2015):</p>
+  <p>Aplica-se a lei portuguesa. Em caso de litígio de consumo, pode recorrer a uma entidade de resolução alternativa de litígios (Lei n.º 144/2015):</p>
   <ul>
     <li>Centro de Arbitragem de Conflitos de Consumo do Algarve, Av. 5 de Outubro, 55, R/C Dto., 8000-075 Faro ·
       <a href="https://www.consumoalgarve.pt">www.consumoalgarve.pt</a></li>
-    <li>CNIACC — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo, Rua D. Afonso Henriques, 1,
-      4700-030 Braga, nas zonas que não têm centro regional ·
-      <a href="https://www.cniacc.pt">www.cniacc.pt</a></li>
   </ul>
   <p>Mais informação sobre estas entidades em <a href="https://www.consumidor.gov.pt">www.consumidor.gov.pt</a>.
     Pode também apresentar reclamação no <a href="https://www.livroreclamacoes.pt">Livro de Reclamações
     Eletrónico</a> ou recorrer aos tribunais competentes nos termos da lei.</p>
-</main>
+  </main>
+</div>
+<footer>
+  <span>Daniel Buryy · NIF 251413659</span>
+  <a href="mailto:croquimax@gmail.com">croquimax@gmail.com</a>
+  <a href="tel:+351926613318">926 613 318</a>
+  <a class="reclama" href="https://www.livroreclamacoes.pt">Livro de Reclamações Eletrónico <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</footer>
+<script>
+(() => {
+  const raiz = document.documentElement;
+  try { const t = localStorage.getItem("croquimax-tema"); if (t) raiz.dataset.tema = t; } catch (e) {}
+  document.getElementById("tema").addEventListener("click", () => {
+    const escuro = getComputedStyle(raiz).colorScheme.includes("dark");
+    raiz.dataset.tema = escuro ? "claro" : "escuro";
+    try { localStorage.setItem("croquimax-tema", raiz.dataset.tema); } catch (e) {}
+  });
+  // Formulário de livre resolução: folha branca e botão para copiar o texto.
+  document.querySelectorAll(".caixa").forEach(c => {
+    if (!/Modelo de formulário/.test(c.textContent)) return;
+    c.classList.add("formulario");
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "copiar"; b.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copiar o texto</span>';
+    const rot = b.querySelector("span");
+    b.addEventListener("click", async () => {
+      const texto = [...c.querySelectorAll("strong, li")].map(e => (e.tagName === "LI" ? "— " : "") + e.textContent.replace(/\s+/g, " ").trim()).join("\n");
+      try { await navigator.clipboard.writeText(texto); rot.textContent = "Copiado"; }
+      catch (e) { rot.textContent = "Selecione o texto e copie"; }
+      setTimeout(() => rot.textContent = "Copiar o texto", 2200);
+    });
+    c.appendChild(b);
+  });
+  // Tabelas: no telemóvel cada linha vira um bloco com os rótulos das colunas.
+  document.querySelectorAll(".doc table").forEach(t => {
+    const r = [...t.querySelectorAll("th")].map(th => th.textContent.trim());
+    t.querySelectorAll("tr").forEach(tr => tr.querySelectorAll("td").forEach((td, i) => td.dataset.rotulo = r[i] || ""));
+  });
+  // Secções: número à parte e índice que acompanha a leitura.
+  const hs = [...document.querySelectorAll(".doc > h2")], lista = document.getElementById("lista");
+  hs.forEach((h, i) => {
+    const m = h.textContent.match(/^(\d+)\.\s*(.*)$/);
+    if (m) { h.classList.add("numerado"); h.innerHTML = `<span class="n">${m[1].padStart(2, "0")}</span><span class="t">${m[2]}</span>`; }
+    h.id = h.id || "s" + (i + 1);
+    const n = m ? `<span>${m[1].padStart(2, "0")}</span>` : "";
+    const li = document.createElement("li"), a = document.createElement("a");
+    a.href = "#" + h.id; a.innerHTML = n; a.append(m ? m[2] : h.textContent);
+    li.append(a); lista.append(li);
+  });
+  const ligas = [...lista.querySelectorAll("a")], barra = document.querySelector(".progresso");
+  const atualizar = () => {
+    const y = scrollY + 140; let i = 0;
+    hs.forEach((h, k) => { if (h.offsetTop <= y) i = k; });
+    ligas.forEach((a, k) => a.classList.toggle("ativo", k === i));
+    const max = document.documentElement.scrollHeight - innerHeight;
+    barra.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+  };
+  addEventListener("scroll", atualizar, { passive: true }); atualizar();
+})();
+</script>
 </body>
 </html>
